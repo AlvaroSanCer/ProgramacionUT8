@@ -21,6 +21,8 @@ public class App {
 
 	/**
 	 * Metodo general para centrar ventanas dentro de la pantalla de usuario.
+	 * Si la ventana es más grande que las dimesiones de la pantalla, esta se 
+	 * ajustara y limitara a la misma.
 	 * 
 	 */
 	
