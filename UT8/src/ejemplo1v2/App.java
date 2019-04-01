@@ -19,6 +19,11 @@ public class App {
 		ventana.setVisible(true);
 	}
 
+	/**
+	 * Metodo general para centrar ventanas dentro de la pantalla de usuario.
+	 * 
+	 */
+	
 	public void centrar() {
 		// Obtener las medidas de la pantalla
 		Dimension medidaPantalla = Toolkit.getDefaultToolkit().getScreenSize();
