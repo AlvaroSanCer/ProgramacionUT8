@@ -2,6 +2,8 @@ package ejemplo1v2;
 
 import ejemplo1v2.vista.Frame1;
 
+
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -10,9 +12,11 @@ import java.awt.Toolkit;
 public class App {
 	private Frame1 ventana;
 
+
 	App() {
 		ventana = new Frame1();
 		centrar();
+	
 		ventana.setVisible(true);
 	}
 
