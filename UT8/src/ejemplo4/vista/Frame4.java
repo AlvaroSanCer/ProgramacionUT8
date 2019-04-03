@@ -29,7 +29,7 @@ public class Frame4 extends JFrame {
 		// Crear el gestor de diseño, en este caso es BoxLayout.
 		gestor = new BoxLayout(contenedor,BoxLayout.Y_AXIS);
 		// Asociar el gestor de diseño al panel de contenido
-		//contenedor.setLayout(gestor);
+		contenedor.setLayout(gestor);
 		// Crear el array de botones
 		botones = new JButton[etiquetas.length];
 		// Crear los botones ya añadirlos al array

@@ -2,8 +2,7 @@ package ejemplo4;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
-import ejemplo2.*;
-import ejemplo3.vista.Frame3;
+
 import ejemplo4.vista.Frame4;
 
 public class App {
