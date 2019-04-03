@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_181"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Menus"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/PedirDatos"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/biblioteca pedirDatos"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Centrar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

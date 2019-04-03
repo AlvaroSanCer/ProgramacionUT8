@@ -2,8 +2,10 @@ package ejemplo7;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
+
 import ejemplo7.vista.Frame7;
 
+//Repositorio funcionando.
 
 
 
@@ -13,7 +15,7 @@ public class App {
 	
 	App(){
 	ventana = new Frame7();
-    centrar();
+   centrar();
 	ventana.setVisible(true);
 	}
 	
