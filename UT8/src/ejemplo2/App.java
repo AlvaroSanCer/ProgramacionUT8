@@ -2,6 +2,7 @@ package ejemplo2;
 
 
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -13,6 +14,7 @@ public class App {
 	App() {
 		ventana = new Frame2();
 		centrar();
+		ventana.getContentPane().setBackground(Color.RED);
 		ventana.setVisible(true);
 	}
 

@@ -1,33 +1,21 @@
-package ejemplo1v2;
-
-import ejemplo1v2.vista.Frame1;
-
+package ejemplo4;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.Color;
+
+import ejemplo2.*;
+import ejemplo3.vista.Frame3;
+import ejemplo4.vista.Frame4;
 
 public class App {
-	private Frame1 ventana;
 
-	App() {
-		ventana = new Frame1();
-
-		ventana.getContentPane().setBackground(Color.GREEN); // Cambia el color
-																// del
-																// contenedor.
-
-		centrar();
-
-		ventana.setVisible(true);
+	private Frame4 ventana;
+	
+	App(){
+	ventana = new Frame4();
+    centrar();
+	ventana.setVisible(true);
 	}
-
-	/**
-	 * Metodo general para centrar ventanas dentro de la pantalla de usuario. Si
-	 * la ventana es más grande que las dimesiones de la pantalla, esta se
-	 * ajustara y limitara a la misma.
-	 * 
-	 */
-
+	
 	public void centrar() {
 		// Obtener las medidas de la pantalla
 		Dimension medidaPantalla = Toolkit.getDefaultToolkit().getScreenSize();
@@ -45,8 +33,7 @@ public class App {
 		ventana.setLocation((medidaPantalla.width - medidaVentana.width) / 2,
 				(medidaPantalla.height - medidaVentana.height) / 2);
 	}
-
 	public static void main(String[] args) {
-		new App();
+	new App();
 	}
-}
+	}
