@@ -30,19 +30,19 @@ public class Frame7 extends JFrame {
 		// Segunda etiqueta solamente tiene una imagen
 		etiquetas[1].setIcon(new ImageIcon("src/imagenes/icono.gif"));
 		// Tercera etiqueta tiene texto e imagen
-		// etiquetas[2].setHorizontalAlignment(SwingConstants.LEFT);
+		 etiquetas[2].setHorizontalAlignment(SwingConstants.LEFT);
 		// Ponemos el texto a la izquierda
 		etiquetas[2].setHorizontalTextPosition(SwingConstants.LEFT);
-		etiquetas[2].setText("Icono a la derecha");
+		etiquetas[2].setText("Mario ahora es neoliberal, ITS MEEEE , MAAAAAAAAARIO");
 		etiquetas[2].setIcon(new ImageIcon("src/imagenes/icono.gif"));
 		// Cuarta etiqueta tiene texto e imagen
-		// etiquetas[3].setHorizontalAlignment(JLabel.LEFT);
+		 etiquetas[3].setHorizontalAlignment(JLabel.LEFT);
 		// Ponemos el texto a la derecha
 		etiquetas[3].setHorizontalTextPosition(JLabel.RIGHT);
-		etiquetas[3].setText("Icono a la izquierda");
+		etiquetas[3].setText("Mario ahora es socialista");
 		etiquetas[3].setIcon(new ImageIcon("src/imagenes/icono.gif"));
 		// Quinta etiqueta tiene texto e imagen
-		etiquetas[4].setText("Icono arriba");
+		etiquetas[4].setText("Ahora Mario es el Presi");
 		etiquetas[4].setIcon(new ImageIcon("src/imagenes/icono.gif"));
 		// Centramos los elementos de la etiqueta
 		etiquetas[4].setHorizontalTextPosition(SwingConstants.CENTER);
