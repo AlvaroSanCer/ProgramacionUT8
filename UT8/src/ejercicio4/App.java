@@ -1,10 +1,10 @@
-package ejercicio3;
+package ejercicio4;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
 
-import ejercicio3.vista.Frame;
+import ejercicio4.vista.Frame;
 
 public class App {
 
@@ -39,6 +39,4 @@ public class App {
 		new App();
 
 	}
-
 }
-
