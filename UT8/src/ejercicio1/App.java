@@ -12,10 +12,7 @@ public class App {
 private Frame ventana;
 	
 	App(){
-//	ventana = new Frame();
-//
-//    centrar();
-//	ventana.setVisible(true);
+
 	
 		crearVentana("Alineacion centro");
 		crearVentana("Alineacion izquierda");

@@ -16,6 +16,7 @@ public class Frame extends JFrame {
 	private JButton botones[];
 	private final String nombres[] = { "Izquierda", "Centro", "Derecha" };
 
+	
 	public Frame(String a) {
 		super(a);
 		// Establecer el tamaño.
