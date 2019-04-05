@@ -26,6 +26,7 @@ public class Frame extends JFrame {
 		gestor = new FlowLayout();
 		// Añado el gestor de diseño
 		contenedor.setLayout(gestor);
+		this.setResizable(false);
 
 		// Crear los botones
 		botones = new JButton[nombres.length];
