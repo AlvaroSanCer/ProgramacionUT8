@@ -32,6 +32,7 @@ public class Frame extends JFrame{
 		contenedor = this.getContentPane();
 		contenedor.setForeground(Color.LIGHT_GRAY);
 		this.setSize(400,350);
+		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gestor1 = new BorderLayout();
 		
