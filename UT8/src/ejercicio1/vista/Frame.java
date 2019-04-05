@@ -37,9 +37,11 @@ public class Frame extends JFrame {
 		switch (a) {
 		case "Alineacion centro":
 			gestor.setAlignment(FlowLayout.CENTER);
+			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			break;
 		case "Alineacion izquierda":
 			gestor.setAlignment(FlowLayout.LEFT);
+			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			break;
 		case "Alineacion derecha":
 			gestor.setAlignment(FlowLayout.RIGHT);
