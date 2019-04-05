@@ -1,10 +1,9 @@
-package ejercicio3;
+package ejemplo14Bordes;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
-
-import ejercicio3.vista.Frame;
+import ejemplo14Bordes.vista.*;
 
 public class App {
 

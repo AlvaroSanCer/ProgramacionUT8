@@ -1,13 +1,12 @@
-package ejercicio3;
+package ejemplo13Contenedores;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
+import ejemplo13Contenedores.vista.*;
 
-import ejercicio3.vista.Frame;
 
 public class App {
-
 	private Frame ventana;
 
 	App() {
@@ -41,4 +40,3 @@ public class App {
 	}
 
 }
-

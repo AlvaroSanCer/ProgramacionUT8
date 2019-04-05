@@ -1,6 +1,5 @@
 package ejercicio1.vista;
 
-
 import java.awt.Container;
 import java.awt.FlowLayout;
 
@@ -17,20 +16,17 @@ public class Frame extends JFrame {
 	private JButton botones[];
 	private final String nombres[] = { "Izquierda", "Centro", "Derecha" };
 
-	public Frame() {
-		super("Ejercicio 1 - Alvaro Santillana");
+	public Frame(String a) {
+		super(a);
 		// Establecer el tamaño.
-		this.setSize(600, 300);
+		this.setSize(500, 150);
 		// Obtenemos el panel raíz de la ventana
-		contenedor = getContentPane();
+		contenedor = this.getContentPane();
 		// Creo el gestor de diseño
 		gestor = new FlowLayout();
 		// Añado el gestor de diseño
 		contenedor.setLayout(gestor);
-		
-		//Cambiando el parametro por 0,1,2 cambiaria la orientación.
-		gestor.setAlignment(1);
-		
+
 		// Crear los botones
 		botones = new JButton[nombres.length];
 		for (int i = 0; i < nombres.length; i++) {
@@ -38,7 +34,19 @@ public class Frame extends JFrame {
 			contenedor.add(botones[i]);
 		}
 
-		
+		switch (a) {
+		case "Alineacion centro":
+			gestor.setAlignment(FlowLayout.CENTER);
+			break;
+		case "Alineacion izquierda":
+			gestor.setAlignment(FlowLayout.LEFT);
+			break;
+		case "Alineacion derecha":
+			gestor.setAlignment(FlowLayout.RIGHT);
+			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			break;
+		}
+
 	}
 
 }

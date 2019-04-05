@@ -12,10 +12,17 @@ public class App {
 private Frame ventana;
 	
 	App(){
-	ventana = new Frame();
-
-    centrar();
-	ventana.setVisible(true);
+//	ventana = new Frame();
+//
+//    centrar();
+//	ventana.setVisible(true);
+	
+		crearVentana("Alineacion centro");
+		crearVentana("Alineacion izquierda");
+		crearVentana("Alineacion derecha");
+		
+		
+		
 	}
 	
 	public void centrar() {
@@ -34,6 +41,12 @@ private Frame ventana;
 		// ventana
 		ventana.setLocation((medidaPantalla.width - medidaVentana.width) / 2,
 				(medidaPantalla.height - medidaVentana.height) / 2);
+	}
+	
+	public void crearVentana(String a){
+		ventana = new Frame(a);
+		ventana.setVisible(true);
+		centrar();
 	}
 	
 	public static void main(String[] args) {
