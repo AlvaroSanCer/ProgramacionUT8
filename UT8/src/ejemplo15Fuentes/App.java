@@ -1,21 +1,20 @@
-package ejercicio3;
+package ejemplo15Fuentes;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
+import ejemplo15Fuentes.vista.Frame;
 
-import ejercicio3.vista.Frame;
+
 
 public class App {
-
 	private Frame ventana;
 
 	App() {
 		ventana = new Frame();
 
-		//centrar();
+		centrar();
 		ventana.setVisible(true);
-		ventana.setLocationRelativeTo(null);
 	}
 
 	public void centrar() {
@@ -42,4 +41,6 @@ public class App {
 	}
 
 }
+
+
 

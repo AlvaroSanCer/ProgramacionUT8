@@ -12,8 +12,8 @@ public class App {
 
 	App() {
 		ventana = new Frame();
-
-		centrar();
+        ventana.setLocationRelativeTo(null);
+		//centrar();
 		ventana.setVisible(true);
 	}
 

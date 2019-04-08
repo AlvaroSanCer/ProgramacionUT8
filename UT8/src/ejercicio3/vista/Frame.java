@@ -19,13 +19,12 @@ public class Frame extends JFrame {
 	private DefaultComboBoxModel<String> modelo;
 	private JComboBox<String> combo;
 	private BorderLayout gestor;
-	private JPanel panelArriba,panelCentral,panelInferior;
-	private JCheckBox chbox1,chbox2;
-	
+	private JPanel panelArriba, panelCentral, panelInferior;
+	private JCheckBox chbox1, chbox2;
 
 	public Frame() {
-		
-		//Configuracion inicial del Contenedor principal.
+
+		// Configuracion inicial del Contenedor principal.
 		super("Ejercicio 3 - Alvaro Santillana Cernuda");
 		contenedor = this.getContentPane();
 		contenedor.setForeground(Color.BLACK);
@@ -34,7 +33,7 @@ public class Frame extends JFrame {
 
 		// Primer Panel - BorderLayout.
 		panelArriba = new JPanel();
-		gestor= new BorderLayout(0,0);
+		gestor = new BorderLayout(0, 0);
 		panelArriba.setBackground(new Color(102, 153, 204));
 		panelArriba.setLayout(gestor);
 		contenedor.add(panelArriba, BorderLayout.NORTH);
@@ -47,14 +46,12 @@ public class Frame extends JFrame {
 		combo.setBackground(Color.GREEN);
 		panelArriba.add(combo);
 
-		
-
 		// Segundo Panel - Absolute.
 		panelCentral = new JPanel();
 		contenedor.add(panelCentral, BorderLayout.CENTER);
 		panelCentral.setLayout(null);
 
-		//Componentes CheckBox.
+		// Componentes CheckBox.
 		chbox1 = new JCheckBox("Segundo plano");
 		chbox1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		chbox1.setForeground(Color.BLUE);
@@ -65,14 +62,15 @@ public class Frame extends JFrame {
 		chbox2.setForeground(Color.BLUE);
 		chbox2.setFont(new Font("Tahoma", Font.BOLD, 13));
 		chbox2.setBounds(227, 24, 134, 23);
+		chbox2.setSelected(true);
 		panelCentral.add(chbox2);
 
-		//Tercer Panel  - 
+		// Tercer Panel -
 		panelInferior = new JPanel();
-		panelInferior.setBackground(Color.CYAN);		
+		panelInferior.setBackground(Color.CYAN);
 		contenedor.add(panelInferior, BorderLayout.SOUTH);
 
-		//Componentes Boton.
+		// Componentes Boton.
 		JButton boton1 = new JButton("Aceptar");
 		panelInferior.add(boton1);
 
@@ -81,9 +79,10 @@ public class Frame extends JFrame {
 	}
 
 	/**
-	 * Metodo para introducir elementos de tipo String como opciones a nuestro JComboBox.
+	 * Metodo para introducir elementos de tipo String como opciones a nuestro
+	 * JComboBox.
 	 */
-	
+
 	public void crearModelo() {
 		modelo = new DefaultComboBoxModel<>();
 		modelo.addElement("Rojo");
