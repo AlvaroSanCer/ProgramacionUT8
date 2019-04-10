@@ -50,4 +50,5 @@ public class Frame extends JFrame {
 		etiqueta3.setForeground(color3);
 		contenedor.add(etiqueta3);
 	}
-}
+
+	}
