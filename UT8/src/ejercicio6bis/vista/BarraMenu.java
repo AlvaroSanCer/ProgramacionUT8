@@ -12,7 +12,7 @@ public class BarraMenu extends JMenuBar {
 	private String[] etiquetasMenus = { "Archivo", "Libro"};
 	private char[] accesoMenus = { 'A', 'L', 'i' };
 	private JMenuItem[] itemMenu;
-	private String[] etiquetasItemMenus = { "Crear Biblioteca", "Acerca de", "Salir", "A�adir", "Borrar", "Listar"};
+	private String[] etiquetasItemMenus = { "Crear Biblioteca", "Acerca de", "Salir", "Añadir", "Borrar", "Listar"};
 	private char[] accesoItemMenus = { 'C', 'c', 'S', '�', 'B', 'L'};
 
 	public BarraMenu() {
@@ -35,7 +35,9 @@ public class BarraMenu extends JMenuBar {
 	}
 
 	public void MostrarInicio() {
-
+		for (int i=3; i<itemMenu.length -1; i++){
+			itemMenu[i].setEnabled(false);
+		}
 	}
 
 }

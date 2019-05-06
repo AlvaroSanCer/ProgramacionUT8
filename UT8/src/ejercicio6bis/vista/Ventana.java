@@ -44,4 +44,12 @@ public class Ventana extends JFrame {
 		contenedor.add(panelBase, BorderLayout.CENTER);
 	}
 
+	public BarraMenu getBarra() {
+		return barra;
+	}
+
+	public void setBarra(BarraMenu barra) {
+		this.barra = barra;
+	}
+
 }

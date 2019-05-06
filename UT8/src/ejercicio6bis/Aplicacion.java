@@ -14,7 +14,7 @@ public class Aplicacion {
 		
 		controlador = new Controlador();
 		//ventana = new Ventana();
-		//ventana =  controlador.getVentana();
+		ventana =  controlador.getVentana();
 		iniciar();
 	}
 	
