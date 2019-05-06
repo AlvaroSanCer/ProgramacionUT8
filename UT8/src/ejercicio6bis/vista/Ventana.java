@@ -17,13 +17,14 @@ public class Ventana extends JFrame {
 	JPanel panelBase;
 	CardLayout gestorCard;
 	PanelInicio panelInicio;
+	PanelAdd paneladd;
 	
 	private BarraMenu barra;
 
 	public Ventana() {
 		barra = new BarraMenu();
 		this.setJMenuBar(barra);
-		this.setTitle("Biblioteca Nacional");
+		this.setTitle("");
 		BorderLayout gestorDiseño = new BorderLayout();
 		
 		contenedor = this.getContentPane();
@@ -41,7 +42,13 @@ public class Ventana extends JFrame {
 		panelInicio = new PanelInicio();
 		panelBase.add(panelInicio);
 		
+		paneladd= new PanelAdd();
+		panelBase.add(paneladd);
+		paneladd.setVisible(false);
+		
+		
 		contenedor.add(panelBase, BorderLayout.CENTER);
+		
 	}
 
 	public BarraMenu getBarra() {
@@ -51,5 +58,13 @@ public class Ventana extends JFrame {
 	public void setBarra(BarraMenu barra) {
 		this.barra = barra;
 	}
+	
+	public PanelAdd getPanelAdd(){
+		return paneladd;
+		
+	}
 
+	public PanelInicio getPanelInicio(){
+		return panelInicio;
+	}
 }

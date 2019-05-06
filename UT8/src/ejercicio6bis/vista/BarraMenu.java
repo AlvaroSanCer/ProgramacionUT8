@@ -40,4 +40,9 @@ public class BarraMenu extends JMenuBar {
 		}
 	}
 
+	public void MostrarItemMenuBiblioteca() {
+		for (int i=3; i<itemMenu.length -1; i++){
+			itemMenu[i].setEnabled(true);
+}
+}
 }
