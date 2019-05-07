@@ -8,7 +8,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
+
+import ejercicio6bis.modelo.Biblioteca;
 import ejercicio6bis.vista.AcercaDe;
+import ejercicio6bis.vista.PanelAdd;
 import ejercicio6bis.vista.Ventana;
 
 public class Controlador implements ActionListener {
@@ -16,7 +19,8 @@ public class Controlador implements ActionListener {
 	private Ventana ventana;
 	private JMenuItem[] opcionesMenu;
 	private AcercaDe dialogoacercade;
-
+	private PanelAdd paneladd;
+	private Biblioteca biblioteca;
 	public Controlador() {
 		ventana = new Ventana();
 
@@ -31,11 +35,13 @@ public class Controlador implements ActionListener {
 		//dialogoacercade.getAceptarAcerca().addActionListener(this);
 
 		// Trabajar con los paneles
+		paneladd= new PanelAdd();
 		
 		//Desactivar las opciones del menu Libro
 		
 		ventana.getBarra().MostrarInicio();
-
+		
+	
 		
 	}
 
@@ -46,7 +52,7 @@ public class Controlador implements ActionListener {
 	}
 
 	public Ventana getVentana() {
-		// TODO Apéndice de método generado automáticamente
+		
 		return ventana;
 	}
 
@@ -69,6 +75,7 @@ public class Controlador implements ActionListener {
 		     ventana.setIconImage(image);
 		     ventana.getBarra().MostrarItemMenuBiblioteca();
 		     ventana.getBarra().getItemMenu()[0].setEnabled(false);
+		     biblioteca = new Biblioteca();
 		     
 		}else if (e.getSource().equals(opcionesMenu[3])){
 			ventana.getPanelAdd().setVisible(true);
@@ -76,6 +83,8 @@ public class Controlador implements ActionListener {
 		}
 
 	}
+	
+	
 	
 }	
 
