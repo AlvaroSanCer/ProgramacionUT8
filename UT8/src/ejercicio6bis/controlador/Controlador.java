@@ -3,18 +3,18 @@ package ejercicio6bis.controlador;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
-
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
 import ejercicio6bis.modelo.Biblioteca;
+import ejercicio6bis.modelo.Libro;
 import ejercicio6bis.vista.AcercaDe;
 import ejercicio6bis.vista.PanelAdd;
 import ejercicio6bis.vista.PanelBorrar;
-
 import ejercicio6bis.vista.Ventana;
 
 public class Controlador implements ActionListener {
@@ -25,14 +25,15 @@ public class Controlador implements ActionListener {
 	private PanelAdd paneladd;
 	private Biblioteca biblioteca;
 	private PanelBorrar panelborrar;
-	private DefaultComboBoxModel<String> titulos;
+	private String[] titulos;
 
 	public Controlador() {
 		ventana = new Ventana();
+		biblioteca = new Biblioteca();
 		paneladd = new PanelAdd();
 		panelborrar = new PanelBorrar();
 		dialogoacercade = new AcercaDe();
-		biblioteca = new Biblioteca();
+		
 
 		// Trabajar con las opciones de Menu.
 
@@ -102,8 +103,12 @@ public class Controlador implements ActionListener {
 			ventana.getPanelAdd().setVisible(true);
 			ventana.getPanelInicio().setVisible(false);
 		}else if (e.getSource().equals(opcionesMenu[4])) {
-			titulos = biblioteca.captarTitulos(biblioteca.getBiblioteca());
-			panelborrar.getComboBox().setModel(titulos);
+			
+			titulos = biblioteca.getTitulos();
+			for(int i=0;i>titulos.length;i++){
+				System.out.print(titulos[i]);
+			}
+			panelborrar.getComboBox().setModel(new DefaultComboBoxModel<String>(titulos));
 			//panelborrar.setVisible(true);
 			ventana.getPanelborrar().setVisible(true);
 			ventana.getPanelInicio().setVisible(false);
@@ -114,6 +119,10 @@ public class Controlador implements ActionListener {
 
 	public Ventana getVentana() {
 		return ventana;
+	}
+
+	public Biblioteca getBiblioteca() {
+		return biblioteca;
 	}
 
 }

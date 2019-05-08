@@ -10,8 +10,12 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+
+import ejercicio6bis.controlador.Controlador;
+import ejercicio6bis.modelo.Biblioteca;
 
 public class PanelBorrar extends JPanel{
 	
@@ -22,6 +26,7 @@ public class PanelBorrar extends JPanel{
 	private JTextField textField;
 	private JTextField textField_2;
 	private JComboBox<String> comboBox;
+
 	//private DefaultComboBoxModel<String> modelo;
 	
 	//private JButton btnLimpiar;
@@ -61,9 +66,9 @@ public class PanelBorrar extends JPanel{
 				add(lblNewLabel_1, gbc_lblNewLabel_1);
 				
 				comboBox = new JComboBox<String>();
-				comboBox.setModel(new DefaultComboBoxModel(new String[] {"hola", "holaaa", "hollaaaaaa"}));
 				
-				//comboBox.setModel(new DefaultComboBoxModel(new String[] {"hol", "adi"}));
+				//String [] titulos = Biblioteca.captarTitulos(Controlador.getBiblioteca());
+				//comboBox.setModel(new DefaultComboBoxModel<String>(titulos));
 				GridBagConstraints gbc_comboBox = new GridBagConstraints();
 				gbc_comboBox.gridwidth = 3;
 				gbc_comboBox.insets = new Insets(0, 0, 5, 5);
@@ -132,5 +137,6 @@ public class PanelBorrar extends JPanel{
 
 	public JComboBox<String> getComboBox() {
 		return comboBox;
+		
 	}
 }
