@@ -18,7 +18,7 @@ public class Ventana extends JFrame {
 	CardLayout gestorCard;
 	PanelInicio panelInicio;
 	PanelAdd paneladd;
-	
+	PanelBorrar panelborrar;
 	private BarraMenu barra;
 
 	public Ventana() {
@@ -46,6 +46,10 @@ public class Ventana extends JFrame {
 		panelBase.add(paneladd);
 		paneladd.setVisible(false);
 		
+		panelborrar= new PanelBorrar();
+		panelBase.add(panelborrar);
+		panelborrar.setVisible(false);
+		
 		
 		contenedor.add(panelBase, BorderLayout.CENTER);
 		
@@ -66,5 +70,9 @@ public class Ventana extends JFrame {
 
 	public PanelInicio getPanelInicio(){
 		return panelInicio;
+	}
+
+	public PanelBorrar getPanelborrar() {
+		return panelborrar;
 	}
 }

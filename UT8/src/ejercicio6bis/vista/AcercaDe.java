@@ -2,6 +2,7 @@ package ejercicio6bis.vista;
 
 import java.awt.Image;
 
+import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -102,5 +103,7 @@ public class AcercaDe extends JDialog {
 		gbc_btnNewButton.gridy = 7;
 		getContentPane().add(btnNewButton, gbc_btnNewButton);
 	}
+
+
 
 }
