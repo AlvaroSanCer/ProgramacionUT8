@@ -6,19 +6,29 @@ import java.util.ArrayList;
 public class Biblioteca {
 
 	private  ArrayList<Libro> biblioteca;
-	private int posicion=0;
-	private String[] titulos = new String [20];
+	private int posicion;
+	private String[] titulos;
+	private String[] codigo;
+	private String[] autor;
+	private String titulo_aux;
+	private String codigo_aux;
+	private String autor_aux;
 	
 
 	public Biblioteca() {
 		
 		biblioteca = new ArrayList<Libro>();
-
+		titulos = new String[20];
+		codigo=new String[20];
+		autor= new String[20];
+		posicion = 0;
 	}
 
 	public void addLibro(Libro l) {
 		biblioteca.add(l);
 		titulos[posicion]= l.getTitulo();
+		codigo[posicion]=l.getCodigo();
+		autor[posicion]=l.getAutor();
 		posicion++;
 		
 	}
@@ -30,30 +40,10 @@ public class Biblioteca {
 	public  ArrayList<Libro> getBiblioteca() {
 		return biblioteca;
 	}
+	
+	
 
-//	public static String[] captarTitulos(ArrayList<Libro> b) {
-//		int posicion = 0;
-//		String[] titulos = new String[10];
-//		
-//
-////		if (b.isEmpty()) {
-////			JOptionPane.showMessageDialog(null,
-////					"No existen libros en la Biblioteca");
-////
-////		} else {
-//			Libro a;
-//			Iterator<Libro> iterador = b.iterator();
-//
-//			while (iterador.hasNext()) {
-//				a = iterador.next();
-//
-//				if (!(a == null)) {
-//					titulos[posicion] = a.getTitulo();
-//					posicion++;
-//
-//				}
-//			}
-//		
-//		return titulos;
-//	}
+
 }
+
+

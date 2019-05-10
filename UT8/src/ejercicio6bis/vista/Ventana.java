@@ -20,6 +20,7 @@ public class Ventana extends JFrame {
 	PanelAdd paneladd;
 	PanelBorrar panelborrar;
 	private BarraMenu barra;
+	PanelListar panellistar;
 
 	public Ventana() {
 		barra = new BarraMenu();
@@ -51,6 +52,12 @@ public class Ventana extends JFrame {
 		panelborrar.setVisible(false);
 		
 		
+		 panellistar = new PanelListar();
+		 panelBase.add(panellistar);
+		 panellistar.setVisible(false);
+		
+		
+		
 		contenedor.add(panelBase, BorderLayout.CENTER);
 		
 	}
@@ -74,5 +81,8 @@ public class Ventana extends JFrame {
 
 	public PanelBorrar getPanelborrar() {
 		return panelborrar;
+	}
+	public PanelListar getPanelListar(){
+		return panellistar;
 	}
 }
