@@ -46,32 +46,32 @@ public class PanelAdd extends JPanel {
 		ponerLabelAutor();
 		ponerTFAutor();
 
-		btnNewButton = new JButton("Guardar");
-
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.gridwidth = 2;
-
-		gbc_btnNewButton.weighty = 1.0;
-		gbc_btnNewButton.weightx = 1.0;
-		gbc_btnNewButton.insets = new Insets(0, 0, 5, 0);
-		gbc_btnNewButton.gridx = 2;
-		gbc_btnNewButton.gridy = 6;
-		add(btnNewButton, gbc_btnNewButton);
-
-		btnLimpiar = new JButton("Limpiar");
-		btnLimpiar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				limpiarTexto();
-
-			}
-		});
-		GridBagConstraints gbc_btnLimpiar = new GridBagConstraints();
-		gbc_btnLimpiar.gridwidth = 2;
-		gbc_btnLimpiar.weighty = 1.0;
-		gbc_btnLimpiar.weightx = 1.0;
-		gbc_btnLimpiar.gridx = 2;
-		gbc_btnLimpiar.gridy = 7;
-		add(btnLimpiar, gbc_btnLimpiar);
+//		btnNewButton = new JButton("Guardar");
+//
+//		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
+//		gbc_btnNewButton.gridwidth = 2;
+//
+//		gbc_btnNewButton.weighty = 1.0;
+//		gbc_btnNewButton.weightx = 1.0;
+//		gbc_btnNewButton.insets = new Insets(0, 0, 5, 0);
+//		gbc_btnNewButton.gridx = 2;
+//		gbc_btnNewButton.gridy = 6;
+//		add(btnNewButton, gbc_btnNewButton);
+//
+//		btnLimpiar = new JButton("Limpiar");
+//		btnLimpiar.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				limpiarTexto();
+//
+//			}
+//		});
+//		GridBagConstraints gbc_btnLimpiar = new GridBagConstraints();
+//		gbc_btnLimpiar.gridwidth = 2;
+//		gbc_btnLimpiar.weighty = 1.0;
+//		gbc_btnLimpiar.weightx = 1.0;
+//		gbc_btnLimpiar.gridx = 2;
+//		gbc_btnLimpiar.gridy = 7;
+//		add(btnLimpiar, gbc_btnLimpiar);
 
 	}
 
@@ -175,7 +175,7 @@ public class PanelAdd extends JPanel {
 	private void ponerGestor() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] {54, 86, 73, 139, 75, 75};
-		gridBagLayout.rowHeights = new int[] { 40, 22, 30, 20, 20, 20, 24, 23, 0 };
+		gridBagLayout.rowHeights = new int[] {40, 22, 30, 20, 20, 20, 30, 30, 30};
 		gridBagLayout.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0 };
 		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		setLayout(gridBagLayout);
