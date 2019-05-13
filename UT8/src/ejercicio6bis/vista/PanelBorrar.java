@@ -179,12 +179,12 @@ public class PanelBorrar extends JPanel{
 		
 	}
 
-	public void setTextField(JTextField textField) {
-		this.textoCodigo = textField;
+	public void setTextFieldCodigo(String textField) {
+		textoCodigo.setText(textField);
 	}
 
-	public void setTextField_2(JTextField textField_2) {
-		this.textoAutor = textField_2;
+	public void setTextFieldAutor(String textField_2) {
+		textoAutor.setText(textField_2);
 	}
 	
 }

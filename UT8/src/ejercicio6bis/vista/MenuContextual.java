@@ -11,19 +11,24 @@ public class MenuContextual extends JPopupMenu {
 
 	public MenuContextual() {
 
-		itemMenu = new JMenuItem[etiquetaMenu.length];
+		
+		
+		crearOpciones();
 
-		for (int i = 0; i < etiquetaMenu.length; i++) {
-			this.add(itemMenu[i]);
+//		for (int i = 0; i > itemMenu.length; i++) {
+//			colorMenu.add(itemMenu[i]);
+//		}
 
-			if (i < itemMenu.length - 1) {
-				this.addSeparator();
-			}
-
-		}
 	}
 
 	public JMenuItem[] getItems() {
 		return itemMenu;
+	}
+
+	void crearOpciones() {
+		itemMenu = new JMenuItem[etiquetaMenu.length];
+		for (int i = 0; i < itemMenu.length; i++) {
+			itemMenu[i] = new JMenuItem(etiquetaMenu[i]);
+		}
 	}
 }
