@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
+import javax.swing.JOptionPane;
+
 
 public class Biblioteca {
 
@@ -12,9 +14,7 @@ public class Biblioteca {
 	private String[] titulos;
 	private String[] codigos;
 	private String[] autores;
-	private String titulo_aux;
-	private String codigo_aux;
-	private String autor_aux;
+	
 	
 
 	public Biblioteca() {
@@ -26,18 +26,56 @@ public class Biblioteca {
 		posicion = 0;
 	}
 
-	public void addLibro(Libro l) {
-		biblioteca.add(l);
+	public String addLibro(Libro l) {
+		//Comprobar que el codigo no esté duplicado.
+		Iterator<Libro> iterador = biblioteca.iterator();
+		String mensaje="";
+		Libro temp;
+		boolean dupli = false;
+		
+		
+		while (iterador.hasNext()){
+			temp = iterador.next();
+			if(temp.getCodigo().equals(l.getCodigo())){
+				mensaje = "Libro duplicado";
+				
+				dupli = true;
+			}
+		}
+		
+		
+		if(!dupli){
+			biblioteca.add(l);
+			mensaje="Libro guardado";
+		
+		
 		titulos[posicion]= l.getTitulo();
 		codigos[posicion]=l.getCodigo();
 		autores[posicion]=l.getAutor();
 		posicion++;
+		
+		}
+		return mensaje;
 		
 	}
 
 	public String[] getTitulos() {
 		return titulos;
 	}
+	
+	public void borrarLibro(Libro l){
+		Iterator<Libro> iterador = biblioteca.iterator();
+		//Libro temp;
+		while (iterador.hasNext()) {
+
+			if (iterador.next().getTitulo().equals(l.getTitulo())) {
+				iterador.remove();
+			}
+		}
+			
+		}
+		
+	
 
 	public  ArrayList<Libro> getBiblioteca() {
 		return biblioteca;

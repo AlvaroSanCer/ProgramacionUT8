@@ -28,6 +28,7 @@ public class PanelBorrar extends JPanel{
 	private JTextField textoCodigo;
 	private JTextField textoAutor;
 	private JComboBox<String> comboBox;
+	private JButton botonborrar;
 	
 
 	//private DefaultComboBoxModel<String> modelo;
@@ -67,17 +68,17 @@ public class PanelBorrar extends JPanel{
 	}
 
 	private void ponerBotonBorrar() {
-		JButton botonborrar = new JButton("Borrar");
+		botonborrar = new JButton("Borrar");
 
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.gridwidth = 2;
+		GridBagConstraints gbc_botonborrar = new GridBagConstraints();
+		gbc_botonborrar.gridwidth = 2;
 
-		gbc_btnNewButton.weighty = 1.0;
-		gbc_btnNewButton.weightx = 1.0;
-		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton.gridx = 2;
-		gbc_btnNewButton.gridy = 6;
-		add(botonborrar, gbc_btnNewButton);
+		gbc_botonborrar.weighty = 1.0;
+		gbc_botonborrar.weightx = 1.0;
+		gbc_botonborrar.insets = new Insets(0, 0, 5, 5);
+		gbc_botonborrar.gridx = 2;
+		gbc_botonborrar.gridy = 6;
+		add(botonborrar, gbc_botonborrar);
 	}
 	
 	public String getTitulo(){
@@ -186,5 +187,16 @@ public class PanelBorrar extends JPanel{
 	public void setTextFieldAutor(String textField_2) {
 		textoAutor.setText(textField_2);
 	}
+
+	public JTextField getTextoCodigo() {
+		return textoCodigo;
+	}
+
+	public JTextField getTextoAutor() {
+		return textoAutor;
+	}
 	
+	public JButton getBotonborrar() {
+		return botonborrar;
+	}
 }

@@ -30,7 +30,7 @@ public class AcercaDe extends JDialog {
 		// getContentPane().setVisible(true);
 		setSize(550, 300);
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] { 31, 198, 80, 200, 31 };
+		gridBagLayout.columnWidths = new int[] { 31, 191, 80, 200, 31 };
 		gridBagLayout.rowHeights = new int[] { 30, 29, 29, 29, 29, 29, 15, 0, 25 };
 		gridBagLayout.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
@@ -97,6 +97,7 @@ public class AcercaDe extends JDialog {
 		gbc_lblFecha.gridy = 5;
 		getContentPane().add(lblFecha, gbc_lblFecha);
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
+		gbc_btnNewButton.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnNewButton.anchor = GridBagConstraints.NORTH;
 		gbc_btnNewButton.insets = new Insets(0, 0, 0, 5);
 		gbc_btnNewButton.gridx = 2;

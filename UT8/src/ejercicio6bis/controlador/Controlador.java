@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -33,48 +32,48 @@ public class Controlador implements ActionListener {
 	private Biblioteca biblioteca;
 	private PanelBorrar panelborrar;
 	private String[] titulos;
-	//private MenuContextual menuContextual;
-	private JMenuItem[] itemContextual ;
+	// private MenuContextual menuContextual;
+	private JMenuItem[] itemContextual;
 	private JPopupMenu pmenu;
 	private Libro libro;
+
 	public Controlador() {
 
 		ventana = new Ventana();
-		biblioteca = new Biblioteca();
+		//biblioteca = new Biblioteca();
 		paneladd = ventana.getPanelAdd();
 		panelborrar = ventana.getPanelborrar();
 		dialogoacercade = new AcercaDe();
 		ventana.getBarra().MostrarInicio();
-		
+
 		pmenu = new JPopupMenu();
-		
+
 		final JPopupMenu colorMenu = new JPopupMenu("Color");
-	    colorMenu.add(makeMenuItem("Guardar"));
-	    colorMenu.add(makeMenuItem("Limpiar"));
-	   
-		
-	    MouseListener mouseListener = new MouseAdapter() {
-	        public void mousePressed(MouseEvent e) {
-	          checkPopup(e);
-	        }
+		colorMenu.add(makeMenuItem("Guardar"));
+		colorMenu.add(makeMenuItem("Limpiar"));
 
-	        public void mouseClicked(MouseEvent e) {
-	          checkPopup(e);
-	        }
+		MouseListener mouseListener = new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				checkPopup(e);
+			}
 
-	        public void mouseReleased(MouseEvent e) {
-	          checkPopup(e);
-	        }
+			public void mouseClicked(MouseEvent e) {
+				checkPopup(e);
+			}
 
-	        private void checkPopup(MouseEvent e) {
-	          if (e.isPopupTrigger()) {
-	            
-	            colorMenu.show(paneladd, e.getX(), e.getY());
-	          }
-	        }
-	      };
+			public void mouseReleased(MouseEvent e) {
+				checkPopup(e);
+			}
+
+			private void checkPopup(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+
+					colorMenu.show(paneladd, e.getX(), e.getY());
+				}
+			}
+		};
 		paneladd.addMouseListener(mouseListener);
-		
+		panelborrar.getComboBox().addActionListener(this);
 
 		// Trabajar con las opciones de Menu.
 
@@ -100,9 +99,11 @@ public class Controlador implements ActionListener {
 		} else if (dialogoacercade.isVisible()) {
 			dialogoacercade.setVisible(false);
 		} else if (e.getSource().equals(opcionesMenu[0])) {
-			ventana.setTitle(JOptionPane.showInputDialog("Nombre de la biblioteca"));
-			ImageIcon ImageIcon = new ImageIcon("src/imagenes/libros.jpg");
+			ventana.setTitle(JOptionPane
+					.showInputDialog("Nombre de la biblioteca"));
+			ImageIcon ImageIcon = new ImageIcon("src/imagenes/biblioteca.jpg");
 			Image image = ImageIcon.getImage();
+			 biblioteca= new Biblioteca();
 			ventana.getBarra().MostrarItemMenuBiblioteca();
 			ventana.setIconImage(image);
 			ventana.getBarra().MostrarItemMenuBiblioteca();
@@ -110,37 +111,44 @@ public class Controlador implements ActionListener {
 		} else if (e.getSource().equals(opcionesMenu[3])) {
 			ventana.getPanelAdd().setVisible(true);
 			ventana.getPanelInicio().setVisible(false);
+			ventana.getPanelAdd().limpiarTexto();
 		} else if (e.getSource().equals(opcionesMenu[4])) {
 			titulos = biblioteca.getTitulos();
-			panelborrar.getComboBox().setModel(new DefaultComboBoxModel<String>(titulos));
-			
-			
-			String a =biblioteca.devolverAutor( panelborrar.getTitulo());
-			String b =biblioteca.devolverCodigo( panelborrar.getTitulo());
+
+			panelborrar.getComboBox().setModel(
+					new DefaultComboBoxModel<String>(titulos));
+
+			String a = biblioteca.devolverAutor(panelborrar.getTitulo());
+			String b = biblioteca.devolverCodigo(panelborrar.getTitulo());
 			panelborrar.setTextFieldAutor(a);
 			panelborrar.setTextFieldCodigo(b);
-			
-			
-			
+			panelborrar.getTextoAutor().setEnabled(false);
+			panelborrar.getTextoCodigo().setEnabled(false);
+
 			ventana.getPanelborrar().setVisible(true);
 			ventana.getPanelInicio().setVisible(false);
 			ventana.getPanelAdd().setVisible(false);
-			 {
-				
-			}
-			
-		} else if (e.getSource().equals(opcionesMenu[5])) {
+
+		} else if (e.getSource().equals(panelborrar.getComboBox())) {
+
+			mostrardatoscombo();
+		}
+
+		else if (e.getSource().equals(opcionesMenu[5])) {
 			ventana.getPanelListar().setVisible(true);
 			ventana.getPanelInicio().setVisible(false);
 			ventana.getPanelAdd().setVisible(false);
 			ventana.getPanelborrar().setVisible(false);
 		} else if (color.equals("Guardar")) {
-			biblioteca.addLibro(ventana.getPanelAdd().crearLibro());
+			JOptionPane.showMessageDialog(null,
+					biblioteca.addLibro(ventana.getPanelAdd().crearLibro()));
 			ventana.getPanelAdd().limpiarTexto();
-			ventana.getPanelAdd().setVisible(false);
-			ventana.getPanelInicio().setVisible(true);
+			// ventana.getPanelAdd().setVisible(false);
+			// ventana.getPanelInicio().setVisible(true);
 		} else if (color.equals("Limpiar")) {
 			ventana.getPanelAdd().limpiarTexto();
+		}else if (e.getSource().equals(panelborrar.getBotonborrar())){
+			//biblioteca.borrarLibro(l);
 		}
 
 	}
@@ -152,12 +160,24 @@ public class Controlador implements ActionListener {
 	public Biblioteca getBiblioteca() {
 		return biblioteca;
 	}
-	
-	private JMenuItem makeMenuItem(String label) {
-	    JMenuItem item = new JMenuItem(label);
-	    item.addActionListener(this);
-	    return item;
-	  }
 
+	private JMenuItem makeMenuItem(String label) {
+		JMenuItem item = new JMenuItem(label);
+		item.addActionListener(this);
+		return item;
+	}
+
+	//Metodo para el cambio de borrar cuandos e selecciona otro titulo.
+	
+	private void mostrardatoscombo() {
+		String titulo = panelborrar.getTitulo();
+		String a = biblioteca.devolverAutor(titulo);
+		String b = biblioteca.devolverCodigo(titulo);
+		panelborrar.setTextFieldAutor(a);
+		panelborrar.setTextFieldCodigo(b);
+		panelborrar.getTextoAutor().setEnabled(false);
+		panelborrar.getTextoCodigo().setEnabled(false);
+
+	}
 
 }
