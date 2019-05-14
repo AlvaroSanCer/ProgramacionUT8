@@ -3,8 +3,11 @@ package ejercicio6bis.modelo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+<<<<<<< HEAD
 
 import javax.swing.JOptionPane;
+=======
+>>>>>>> refs/remotes/origin/master
 
 
 public class Biblioteca {
@@ -14,7 +17,13 @@ public class Biblioteca {
 	private String[] titulos;
 	private String[] codigos;
 	private String[] autores;
+<<<<<<< HEAD
 	
+=======
+	private String titulo_aux;
+	private String codigo_aux;
+	private String autor_aux;
+>>>>>>> refs/remotes/origin/master
 	
 
 	public Biblioteca() {

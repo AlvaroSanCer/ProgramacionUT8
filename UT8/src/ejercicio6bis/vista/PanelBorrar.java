@@ -186,6 +186,7 @@ public class PanelBorrar extends JPanel{
 
 	public void setTextFieldAutor(String textField_2) {
 		textoAutor.setText(textField_2);
+<<<<<<< HEAD
 	}
 
 	public JTextField getTextoCodigo() {
@@ -194,6 +195,8 @@ public class PanelBorrar extends JPanel{
 
 	public JTextField getTextoAutor() {
 		return textoAutor;
+=======
+>>>>>>> refs/remotes/origin/master
 	}
 	
 	public JButton getBotonborrar() {
