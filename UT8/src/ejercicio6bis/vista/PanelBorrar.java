@@ -26,6 +26,7 @@ public class PanelBorrar extends JPanel {
 	private JComboBox<String> comboBox;
 	private JButton botonborrar;
 
+
 	// private DefaultComboBoxModel<String> modelo;
 
 	// private JButton btnLimpiar;
@@ -179,6 +180,16 @@ public class PanelBorrar extends JPanel {
 
 	public void setTextFieldAutor(String textField_2) {
 		textoAutor.setText(textField_2);
+
+	}
+
+	public JTextField getTextoCodigo() {
+		return textoCodigo;
+	}
+
+	public JTextField getTextoAutor() {
+		return textoAutor;
+
 	}
 
 	public JButton getBotonborrar() {

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 
+
 import javax.swing.table.DefaultTableModel;
 
 public class Biblioteca {
@@ -78,6 +79,7 @@ public class Biblioteca {
 		}
 		return titulos;
 	}
+
 
 	public DefaultTableModel darTabla() {
 		

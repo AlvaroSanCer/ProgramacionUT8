@@ -18,7 +18,7 @@ public class PanelImagen extends JPanel{
 		//Constructor
 		public PanelImagen() {
 			setBorder(null);
-			imagen = new ImageIcon("src/Imagenes/libros.jpg");
+			imagen = new ImageIcon("src/Imagenes/biblioteca.jpg");
 			imagenFondo = imagen.getImage();
 		}
 

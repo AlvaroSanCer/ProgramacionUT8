@@ -27,7 +27,11 @@ public class AcercaDe extends JDialog {
 		// getContentPane().setVisible(true);
 		setSize(550, 300);
 		GridBagLayout gridBagLayout = new GridBagLayout();
+
 		gridBagLayout.columnWidths = new int[] { 31, 173, 80, 200, 31 };
+
+		gridBagLayout.columnWidths = new int[] { 31, 191, 80, 200, 31 };
+
 		gridBagLayout.rowHeights = new int[] { 30, 29, 29, 29, 29, 29, 15, 0, 25 };
 		gridBagLayout.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
@@ -35,7 +39,6 @@ public class AcercaDe extends JDialog {
 
 		PanelImagen panel = new PanelImagen();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.gridwidth = 2;
 		gbc_panel.weighty = 1.0;
 		gbc_panel.weightx = 1.0;
 		gbc_panel.fill = GridBagConstraints.BOTH;
