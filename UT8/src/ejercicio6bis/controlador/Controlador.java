@@ -91,12 +91,14 @@ public class Controlador implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String color = e.getActionCommand();
-		if (e.getSource().equals(opcionesMenu[2])) {
+		//CONJUNTO DE EVENTOS ASICIADOS A LOS BOTONES
+		
+		if (e.getSource().equals(opcionesMenu[2])) {  //Salir
 			System.exit(0);
-		} else if (e.getSource().equals(opcionesMenu[1])) {
+		} else if (e.getSource().equals(opcionesMenu[1])) { //Dialogo Acerca de
 			dialogoacercade.setLocationRelativeTo(ventana);
 			dialogoacercade.setVisible(true);
-		} else if (dialogoacercade.isVisible()) {
+		} else if (dialogoacercade.isVisible()) {       
 			dialogoacercade.setVisible(false);
 		} else if (e.getSource().equals(opcionesMenu[0])) {
 			ventana.setTitle(JOptionPane.showInputDialog("Nombre de la biblioteca"));
@@ -111,7 +113,6 @@ public class Controlador implements ActionListener {
 			ventana.getPanelInicio().setVisible(false);
 			panelborrar.getComboBox().setVisible(false);
 		} else if (e.getSource().equals(opcionesMenu[4])) {
-			
 			titulos = biblioteca.getotitulos();
 			panelborrar.getComboBox().setModel(new DefaultComboBoxModel<String>(titulos));
 			panelborrar.getComboBox().setVisible(true);
