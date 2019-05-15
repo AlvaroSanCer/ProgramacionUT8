@@ -12,15 +12,11 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
 import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-
-import ejercicio6bis.controlador.Controlador;
-import ejercicio6bis.modelo.Biblioteca;
 
 import javax.swing.border.BevelBorder;
 
-public class PanelBorrar extends JPanel{
-	
+public class PanelBorrar extends JPanel {
+
 	/**
 	 * 
 	 */
@@ -28,36 +24,35 @@ public class PanelBorrar extends JPanel{
 	private JTextField textoCodigo;
 	private JTextField textoAutor;
 	private JComboBox<String> comboBox;
-	
+	private JButton botonborrar;
 
-	//private DefaultComboBoxModel<String> modelo;
-	
-	//private JButton btnLimpiar;
-	
+	// private DefaultComboBoxModel<String> modelo;
+
+	// private JButton btnLimpiar;
+
 	public PanelBorrar() {
 		setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		this.setSize(513,300);
-		
-		
+		this.setSize(513, 300);
+
 		ponerGestor();
 
 		labelBorrar();
-		
+
 		labelTitulo();
-				
-				comboBox = new JComboBox<String>();
-				GridBagConstraints gbc_comboBox = new GridBagConstraints();
-				gbc_comboBox.weightx = 1.0;
-				gbc_comboBox.gridwidth = 4;
-				gbc_comboBox.insets = new Insets(0, 0, 5, 5);
-				gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
-				gbc_comboBox.gridx = 1;
-				gbc_comboBox.gridy = 3;
-				add(comboBox, gbc_comboBox);
-		
-				poderCodigo();
-		
-				textCodigo();
+
+		comboBox = new JComboBox<String>();
+		GridBagConstraints gbc_comboBox = new GridBagConstraints();
+		gbc_comboBox.weightx = 1.0;
+		gbc_comboBox.gridwidth = 4;
+		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
+		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
+		gbc_comboBox.gridx = 1;
+		gbc_comboBox.gridy = 3;
+		add(comboBox, gbc_comboBox);
+
+		poderCodigo();
+
+		textCodigo();
 
 		ponerAutor();
 
@@ -67,25 +62,24 @@ public class PanelBorrar extends JPanel{
 	}
 
 	private void ponerBotonBorrar() {
-		JButton botonborrar = new JButton("Borrar");
+		botonborrar = new JButton("Borrar");
 
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.gridwidth = 2;
+		GridBagConstraints gbc_botonborrar = new GridBagConstraints();
+		gbc_botonborrar.gridwidth = 2;
 
-		gbc_btnNewButton.weighty = 1.0;
-		gbc_btnNewButton.weightx = 1.0;
-		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton.gridx = 2;
-		gbc_btnNewButton.gridy = 6;
-		add(botonborrar, gbc_btnNewButton);
+		gbc_botonborrar.weighty = 1.0;
+		gbc_botonborrar.weightx = 1.0;
+		gbc_botonborrar.insets = new Insets(0, 0, 5, 5);
+		gbc_botonborrar.gridx = 2;
+		gbc_botonborrar.gridy = 6;
+		add(botonborrar, gbc_botonborrar);
 	}
-	
-	public String getTitulo(){
+
+	public String getTitulo() {
 		String titulo = (String) comboBox.getSelectedItem();
-		
+
 		return titulo;
-		
-		
+
 	}
 
 	private void textAutor() {
@@ -176,7 +170,7 @@ public class PanelBorrar extends JPanel{
 
 	public JComboBox<String> getComboBox() {
 		return comboBox;
-		
+
 	}
 
 	public void setTextFieldCodigo(String textField) {
@@ -186,5 +180,8 @@ public class PanelBorrar extends JPanel{
 	public void setTextFieldAutor(String textField_2) {
 		textoAutor.setText(textField_2);
 	}
-	
+
+	public JButton getBotonborrar() {
+		return botonborrar;
+	}
 }

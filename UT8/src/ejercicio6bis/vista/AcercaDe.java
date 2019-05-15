@@ -1,21 +1,18 @@
 package ejercicio6bis.vista;
 
-import java.awt.Image;
 
-import javax.swing.AbstractButton;
-import javax.swing.ImageIcon;
+
+
 import javax.swing.JDialog;
-import javax.swing.JPanel;
+
 
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
-import java.awt.Toolkit;
-import java.awt.Color;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -30,7 +27,7 @@ public class AcercaDe extends JDialog {
 		// getContentPane().setVisible(true);
 		setSize(550, 300);
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] { 31, 198, 80, 200, 31 };
+		gridBagLayout.columnWidths = new int[] { 31, 173, 80, 200, 31 };
 		gridBagLayout.rowHeights = new int[] { 30, 29, 29, 29, 29, 29, 15, 0, 25 };
 		gridBagLayout.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
@@ -97,6 +94,7 @@ public class AcercaDe extends JDialog {
 		gbc_lblFecha.gridy = 5;
 		getContentPane().add(lblFecha, gbc_lblFecha);
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
+		gbc_btnNewButton.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnNewButton.anchor = GridBagConstraints.NORTH;
 		gbc_btnNewButton.insets = new Insets(0, 0, 0, 5);
 		gbc_btnNewButton.gridx = 2;

@@ -26,6 +26,7 @@ public class PanelListar extends JPanel {
 		gestorDiseño.setHgap(15);
 		gestorDiseño.setVgap(15);
 		this.setLayout(gestorDiseño);
+		this.setOpaque(true);
 		
 		titulo = new JLabel("LISTADO DE LIBROS");
 		titulo.setBorder(new EmptyBorder(10,0,10,0));
@@ -45,4 +46,8 @@ public class PanelListar extends JPanel {
 	public JTable getTabla(){
 		return tabla;
 	}
+
+
+	
+	
 }

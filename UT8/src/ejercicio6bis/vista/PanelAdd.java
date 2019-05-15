@@ -3,9 +3,7 @@ package ejercicio6bis.vista;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 
-
 import javax.swing.JLabel;
-
 
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -16,8 +14,7 @@ import ejercicio6bis.modelo.Libro;
 
 import java.awt.Insets;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
 import javax.swing.border.BevelBorder;
 
 public class PanelAdd extends JPanel {
@@ -30,14 +27,14 @@ public class PanelAdd extends JPanel {
 	private JButton btnNewButton;
 
 	public PanelAdd() {
-		//Border y tamaño
+		// Border y tamaño
 		ponerBorder();
 		this.setSize(550, 300);
-		
-		//Insertar gestor en en panel
+
+		// Insertar gestor en en panel
 		ponerGestor();
 
-		//Insertar los labels y los JTextField a nuestro panel mediante metodos
+		// Insertar los labels y los JTextField a nuestro panel mediante metodos
 		ponerTituloPanel();
 		ponerLabelCodigo();
 		ponerTFCodigo();
@@ -46,37 +43,36 @@ public class PanelAdd extends JPanel {
 		ponerLabelAutor();
 		ponerTFAutor();
 
-//		btnNewButton = new JButton("Guardar");
-//
-//		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-//		gbc_btnNewButton.gridwidth = 2;
-//
-//		gbc_btnNewButton.weighty = 1.0;
-//		gbc_btnNewButton.weightx = 1.0;
-//		gbc_btnNewButton.insets = new Insets(0, 0, 5, 0);
-//		gbc_btnNewButton.gridx = 2;
-//		gbc_btnNewButton.gridy = 6;
-//		add(btnNewButton, gbc_btnNewButton);
-//
-//		btnLimpiar = new JButton("Limpiar");
-//		btnLimpiar.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				limpiarTexto();
-//
-//			}
-//		});
-//		GridBagConstraints gbc_btnLimpiar = new GridBagConstraints();
-//		gbc_btnLimpiar.gridwidth = 2;
-//		gbc_btnLimpiar.weighty = 1.0;
-//		gbc_btnLimpiar.weightx = 1.0;
-//		gbc_btnLimpiar.gridx = 2;
-//		gbc_btnLimpiar.gridy = 7;
-//		add(btnLimpiar, gbc_btnLimpiar);
-
 	}
 
 	private void ponerBorder() {
 		setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+	}
+
+	public void limpiarTexto() {
+
+		campoCodigo.setText(" ");
+		campoTitulo.setText(" ");
+		campoAutor.setText(" ");
+		campoCodigo.requestFocus();
+
+	}
+
+	public Libro crearLibro() {
+
+		String a = campoCodigo.getText();
+		String b = campoTitulo.getText();
+		String c = campoAutor.getText();
+		Libro libro = new Libro(a, b, c);
+		return libro;
+	}
+
+	public JButton getLimpiar() {
+		return btnLimpiar;
+	}
+
+	public JButton getGuardar() {
+		return btnNewButton;
 	}
 
 	private void ponerTFAutor() {
@@ -174,36 +170,11 @@ public class PanelAdd extends JPanel {
 
 	private void ponerGestor() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] {54, 86, 73, 139, 75, 75};
-		gridBagLayout.rowHeights = new int[] {40, 22, 30, 20, 20, 20, 30, 30, 30};
+		gridBagLayout.columnWidths = new int[] { 54, 86, 73, 139, 75, 75 };
+		gridBagLayout.rowHeights = new int[] { 40, 22, 30, 20, 20, 20, 30, 30, 30 };
 		gridBagLayout.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0 };
 		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		setLayout(gridBagLayout);
 	}
 
-	public void limpiarTexto() {
-
-		campoCodigo.setText(" ");
-		campoTitulo.setText(" ");
-		campoAutor.setText(" ");
-		campoCodigo.requestFocus();
-
-	}
-
-	public Libro crearLibro() {
-
-	    String a = campoCodigo.getText();
-		String b = campoTitulo.getText();
-		String c = campoAutor.getText();
-		Libro libro = new Libro(a, b, c);
-		return libro;
-	}
-
-	public JButton getLimpiar() {
-		return btnLimpiar;
-	}
-
-	public JButton getGuardar() {
-		return btnNewButton;
-	}
 }
